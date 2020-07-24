@@ -1,16 +1,13 @@
-{
+console.log('processo', process.env.DATABASE_URL);
+module.exports = {
    "type": "postgres",
-   "host": "localhost",
-   "port": 5433,
-   "username": "postgres",
-   "password": "123",
-   "database": "dbtypeorm",
+   "URL":process.env.DATABASE_URL,
    "logging": false,
    "entities": [
-      "src/models/**/*.ts"
+      "dist/models/**/*.js"
    ],
    "migrations": [
-      "src/database/migration/**/*.ts"
+      "dist/database/migration/**/*.js"
    ],
    "subscribers": [
       "src/subscriber/**/*.ts"
